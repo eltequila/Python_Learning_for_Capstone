@@ -60,3 +60,6 @@ sample2 = PreySample(
 )
 
 print(sample2.get_discrimination_factor(predator_delta13c = -15.5))
+
+
+# Finished
