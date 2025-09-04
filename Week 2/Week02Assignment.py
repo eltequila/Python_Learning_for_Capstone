@@ -59,4 +59,4 @@ sample2 = PreySample(
     sample_date_utc= '2020-11-17T05:00:02Z'
 )
 
-print(sample2.get_discrimination_factor(predator_delta13c = 15.5))
+print(sample2.get_discrimination_factor(predator_delta13c = -15.5))
