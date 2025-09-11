@@ -28,10 +28,9 @@ class PreySample:
         return tissue_count
 
     def get_sample_date(self):
-        date_no_z = self.sample_date_utc.rstrip('Z')
-        sample_date = datetime.datetime.strptime(date_no_z, '%Y-%m-%dT%H:%M:%S')
+        sample_date = datetime.datetime.strptime(self.sample_date_utc, '%Y-%m-%dT%H:%M:%SZ')
         return sample_date
-
+    
     def get_discrimination_factor(self,predator_delta13c):
         average_delta13c_sample2 = self.average_delta13c()
         return predator_delta13c - average_delta13c_sample2
