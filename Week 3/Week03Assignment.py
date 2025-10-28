@@ -38,9 +38,9 @@ print(is_population_disabled(52, 392))
 
 def is_gp_religious_or_academic(gp_name_string):
 
-    keywords = ('Mosque','Church','School','Institute','Education','Faculty')
+    keywords = {'Mosque','Church','School','Institute','Education','Faculty'}
 
-    set_gp_name_string = set(gp_name_string.split())
+    set_gp_name_string = set(gp_name_string.split(' '))
 
     keywords_capture = set_gp_name_string.intersection(keywords)
 
@@ -65,7 +65,8 @@ def get_sanitation_priority(ratio:str, disabled:int, pop:int, gp:str):
 
     if (is_main_ratio_toilets_to_people_met(ratio) == False and
         is_population_disabled(disabled, pop) == True and
-        is_gp_religious_or_academic(gp) == True):
+        is_gp_religious_or_academic(gp) == True
+    ):
         return "High Priority"
 
     elif (is_main_ratio_toilets_to_people_met(ratio) == True and
